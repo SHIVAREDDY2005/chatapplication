@@ -1,0 +1,48 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #2563eb;
+}
+
+body.dark {
+  --bg: #111827;
+  --card: #1f2937;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --accent: #60a5fa;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, Arial, sans-serif; background: var(--bg); color: var(--text); }
+
+.auth-page { min-height: 100vh; display: grid; place-items: center; }
+.auth-card { width: min(400px, 90vw); background: var(--card); padding: 24px; border-radius: 12px; display: grid; gap: 10px; }
+input, button { padding: 10px 12px; border-radius: 8px; border: 1px solid #cbd5e1; }
+button { background: var(--accent); color: white; border: none; cursor: pointer; }
+.error { color: #ef4444; margin: 0; }
+
+.chat-layout { display: grid; grid-template-columns: 320px 1fr; height: 100vh; }
+.sidebar { background: var(--card); padding: 14px; border-right: 1px solid #d1d5db; overflow-y: auto; }
+.sidebar-header { display: flex; justify-content: space-between; align-items: center; }
+.section-title { font-size: 12px; color: var(--muted); text-transform: uppercase; margin: 14px 0 6px; }
+.chat-item { width: 100%; text-align: left; background: transparent; color: var(--text); border: 1px solid #d1d5db; margin-bottom: 6px; display: flex; justify-content: space-between; }
+.chat-item.active { border-color: var(--accent); }
+.badge { background: #ef4444; color: white; border-radius: 999px; padding: 2px 8px; font-size: 11px; }
+.online { color: #16a34a; }
+
+.chat-main { display: grid; grid-template-rows: auto 1fr auto; }
+header, footer { background: var(--card); border-bottom: 1px solid #d1d5db; padding: 12px; display: flex; justify-content: space-between; gap: 8px; }
+footer { border-bottom: none; border-top: 1px solid #d1d5db; }
+footer input { flex: 1; }
+.chat-window { padding: 16px; overflow-y: auto; display: grid; gap: 10px; }
+.bubble { max-width: 70%; background: var(--card); padding: 10px; border-radius: 10px; border: 1px solid #d1d5db; }
+.bubble.mine { margin-left: auto; background: #dbeafe; }
+.meta { font-size: 11px; color: var(--muted); display: flex; justify-content: space-between; }
+.typing { color: var(--muted); font-style: italic; }
+
+.modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.45); display: grid; place-items: center; }
+.modal { width: 400px; max-width: 90vw; background: var(--card); border-radius: 12px; padding: 16px; }
+.user-picks { max-height: 220px; overflow: auto; display: grid; gap: 6px; margin-top: 10px; }
+.actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 12px; }
